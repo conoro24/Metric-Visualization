@@ -14,12 +14,12 @@
 
     // The data for our dataset
     data: {
-        labels: {{varA}},
+        labels: {{varA|safe}},
         datasets: [{
             label: 'Number of Commits per Repository',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: {{commits}}
+            data: {{varB|safe}}
         }]
     },
 
