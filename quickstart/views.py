@@ -4,13 +4,13 @@ from github import Github
 # Create your views here.
 username = 'conoro24'
 g = Github()
+user = g.get_user(username)
 
 lstA = []
 lstB = []
 
-user = g.get_user(username)
 for repo in user.get_repos():
-    name = repo.full_name
+    name = repo.name
     commits = repo.get_commits().totalCount
   
     lstA.append(name)
@@ -19,5 +19,5 @@ for repo in user.get_repos():
 def indexPage(request):
 	varA = lstA
 	varB = lstB
-	context = {'varA':varA,'VarB':varB}
+	context = {'varA':varA,'varB':varB}
 	return render(request,'index.html', context)
